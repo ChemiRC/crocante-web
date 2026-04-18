@@ -1,18 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'crocante-dark': '#1a1a1a', // Fondo oscuro para contrastar
-        'crocante-gold': '#d4af37', // Tono miel para resaltar precios y promociones
-        'crocante-cream': '#f4f1eb', // Tono suave para los textos
+        'crocante-gold': '#d4af37',
+        'crocante-dark': '#2c2c2c', // Para textos legibles
+        'marble-white': '#fdfdfd',
       },
-      fontFamily: {
-        'serif': ['"Great Vibes"', 'serif'], // Fuente para los títulos y el logo
+      backgroundImage: {
+        // Este es el "truco" para el efecto mármol sutil
+        'marble-pattern': "radial-gradient(circle at 50% 50%, rgba(200, 200, 200, 0.05) 0%, transparent 80%), linear-gradient(120deg, #fdfdfd 0%, #f5f5f5 100%)",
       }
     },
   },
