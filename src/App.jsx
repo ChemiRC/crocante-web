@@ -61,12 +61,6 @@ function App() {
             </svg>
           </a>
         </div>
- 
-        {/* Scroll hint */}
-        <div className="absolute bottom-10 flex flex-col items-center gap-2 animate-bounce opacity-50" aria-hidden="true">
-          <div className="w-px h-8 bg-[#d4af37]"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37]"></div>
-        </div>
       </header>
  
       {/* SECCIÓN FRASE DEL ALMA */}
