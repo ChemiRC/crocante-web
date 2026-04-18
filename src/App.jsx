@@ -121,7 +121,7 @@ function App() {
       <section className="pb-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* TARJETA PRODUCTO: YUCATÁN */}
+          {/* TARJETA PRODUCTO: YUCATÁN (CORREGIDO) */}
           <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
             <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
               <img 
@@ -131,21 +131,16 @@ function App() {
               />
             </div>
             <h2 className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-3">
-              Sutiles y Cítricos
+              Tropical y Auténtico
             </h2>
             <h3 className="text-4xl font-serif text-[#a67c00] mb-3">
               Yucatán
             </h3>
             <p className="text-[#d4af37] italic text-lg mb-6">
-              Delicadeza que ilumina el alma
+              Caribe que acaricia el alma
             </p>
-            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
-              Bizcocho de plátano con betún de queso crema, decorado con plátano fresco, arándanos y hoja dorada.
-            </p>
-            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
-              Armonía celestial en un bocado. <br/>
-              Paz manifiesta. <br/>
-              Ser reflejo de la divinidad.
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-10 px-4">
+              Bizcocho de coco y ron, humectado con un toque del Caribe, coronado con láminas cálidas de piña y coco dorado.
             </p>
             <a 
               href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Yucat%C3%A1n." 
