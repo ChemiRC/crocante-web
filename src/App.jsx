@@ -121,7 +121,7 @@ function App() {
       <section className="pb-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* TARJETA PRODUCTO: YUCATÁN (CORREGIDO) */}
+          {/* TARJETA PRODUCTO: YUCATÁN (CON FRASES ORIGINALES) */}
           <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
             <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
               <img 
@@ -139,8 +139,14 @@ function App() {
             <p className="text-[#d4af37] italic text-lg mb-6">
               Caribe que acaricia el alma
             </p>
-            <p className="text-gray-600 font-light text-sm leading-relaxed mb-10 px-4">
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
               Bizcocho de coco y ron, humectado con un toque del Caribe, coronado con láminas cálidas de piña y coco dorado.
+            </p>
+            {/* AQUÍ ESTÁN LAS 3 NUEVAS FRASES ORIGINALES PARA YUCATÁN */}
+            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
+              Dulzura mística nacida bajo el sol maya. <br/>
+              Un susurro de coco, ron y selva. <br/>
+              Tesoro dorado escondido en el paladar.
             </p>
             <a 
               href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Yucat%C3%A1n." 
