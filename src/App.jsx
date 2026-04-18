@@ -70,9 +70,9 @@ function App() {
         </p>
       </section>
 
-      {/* SECCIÓN EDICIÓN ESPECIAL 10 DE MAYO */}
+      {/* SECCIÓN EDICIÓN ESPECIAL 10 DE MAYO (CON IMAGEN ARRIBA EN MÓVIL) */}
       <section className="pb-24 px-6 max-w-6xl mx-auto">
-        <div className="bg-white/95 backdrop-blur-sm p-12 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col md:flex-row-reverse gap-12 items-center group">
+        <div className="bg-white/95 backdrop-blur-sm p-12 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col-reverse md:flex-row-reverse gap-12 items-center group">
           
           <div className="flex-1 space-y-6 text-center md:text-left">
             <p className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold">
@@ -123,9 +123,45 @@ function App() {
         </div>
       </section>
 
-      {/* SECCIÓN NUEVOS PRODUCTOS (LOS 6 PASTELES) */}
+      {/* SECCIÓN NUEVOS PRODUCTOS (LOS 7 PASTELES) */}
       <section className="pb-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          {/* TARJETA PRODUCTO: AVELLANÍSIMO (NUEVO) */}
+          <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
+            <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
+              <img 
+                src="/avellanisimo-crocante.jpeg" 
+                alt="Pastel Avellanísimo" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h2 className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-3">
+              Clásicos y Cremosos
+            </h2>
+            <h3 className="text-4xl font-serif text-[#a67c00] mb-3">
+              Avellanísimo
+            </h3>
+            <p className="text-[#d4af37] italic text-lg mb-6">
+              Intensidad que abraza los sentidos
+            </p>
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
+              Cheesecake estilo NY con crema de avellanas tostadas, dulce de leche y tropiezos de avellana.
+            </p>
+            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
+              Alma neoyorquina. <br/>
+              Mano mexicana. <br/>
+              Gozo hecho postre.
+            </p>
+            <a 
+              href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Avellan%C3%ADsimo." 
+              target="_blank"
+              rel="noreferrer"
+              className="mt-auto w-full bg-[#d4af37] text-white px-6 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
+            >
+              Consultar Disponibilidad
+            </a>
+          </div>
           
           {/* TARJETA PRODUCTO: YUCATÁN */}
           <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
