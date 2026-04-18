@@ -72,18 +72,18 @@ function App() {
 
       {/* SECCIÓN EDICIÓN ESPECIAL 10 DE MAYO */}
       <section className="pb-24 px-6 max-w-6xl mx-auto">
-        <div className="bg-white p-12 rounded-xl border border-gray-200 shadow-2xl shadow-black/10 flex flex-col md:flex-row gap-12 items-center">
+        <div className="bg-white/95 backdrop-blur-sm p-12 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col md:flex-row-reverse gap-12 items-center group">
           
           <div className="flex-1 space-y-6 text-center md:text-left">
-            <h2 className="text-sm md:text-base tracking-[0.3em] text-[#c5a028] uppercase font-bold">
+            <p className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold">
               — Edición Especial 10 de Mayo —
-            </h2>
+            </p>
             
             <div className="space-y-2">
               <h3 className="text-5xl md:text-6xl font-serif text-[#a67c00] tracking-tight">
                 MAMÁ,
               </h3>
-              <h4 className="text-3xl md:text-4xl font-serif text-[#d4af37]/70 italic">
+              <h4 className="text-3xl md:text-4xl font-serif text-[#d4af37] italic">
                 hoy te entendí
               </h4>
             </div>
@@ -92,36 +92,42 @@ function App() {
               Amor en capas
             </p>
             
-            <p className="text-[#c5a028] font-light text-lg leading-relaxed border-t border-[#d4af37]/30 pt-6">
-              Pastel de queso mascarpone, <br/> frutos rojos y litchie
+            <p className="text-gray-700 font-light text-lg leading-relaxed mb-6">
+              Pastel de queso mascarpone, frutos rojos y litchie
+            </p>
+            
+            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
+              Pureza infinita que vuelve a su origen. <br/>
+              Un abrazo de dulzura para mamá. <br/>
+              El regalo más noble para su alma.
             </p>
             
             <a 
               href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Edici%C3%B3n%2010%20de%20Mayo%20(Amor%20en%20capas)." 
               target="_blank"
               rel="noreferrer"
-              className="inline-block mt-8 bg-[#d4af37] text-white px-10 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
+              className="mt-auto w-full md:w-auto inline-block bg-[#d4af37] text-white px-10 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
             >
               Consultar Disponibilidad
             </a>
           </div>
           
-          <div className="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden rounded-lg shadow-md group">
+          <div className="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden rounded-lg shadow-md aspect-square">
              <img 
                 src="/pastel10demayo.jpeg" 
                 alt="Pastel Amor en Capas" 
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
              />
           </div>
 
         </div>
       </section>
 
-      {/* SECCIÓN NUEVOS PRODUCTOS */}
+      {/* SECCIÓN NUEVOS PRODUCTOS (LOS 6 PASTELES) */}
       <section className="pb-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* TARJETA PRODUCTO: YUCATÁN (CON FRASES ORIGINALES) */}
+          {/* TARJETA PRODUCTO: YUCATÁN */}
           <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
             <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
               <img 
@@ -142,7 +148,6 @@ function App() {
             <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
               Bizcocho de coco y ron, humectado con un toque del Caribe, coronado con láminas cálidas de piña y coco dorado.
             </p>
-            {/* AQUÍ ESTÁN LAS 3 NUEVAS FRASES ORIGINALES PARA YUCATÁN */}
             <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
               Dulzura mística nacida bajo el sol maya. <br/>
               Un susurro de coco, ron y selva. <br/>
@@ -258,6 +263,78 @@ function App() {
             </p>
             <a 
               href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Anillo%20Cacao." 
+              target="_blank"
+              rel="noreferrer"
+              className="mt-auto w-full bg-[#d4af37] text-white px-6 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
+            >
+              Consultar Disponibilidad
+            </a>
+          </div>
+
+          {/* TARJETA PRODUCTO: AMOR DE DOS */}
+          <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
+            <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
+              <img 
+                src="/amor-de-dos-crocante.jpeg" 
+                alt="Pastel Amor de Dos" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h2 className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-3">
+              Frutas y Dualidades
+            </h2>
+            <h3 className="text-4xl font-serif text-[#a67c00] mb-3">
+              Amor de Dos
+            </h3>
+            <p className="text-[#d4af37] italic text-lg mb-6">
+              Delicadeza que toca el corazón
+            </p>
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
+              Bizcocho de vainilla y queso que funde la dulce compañía del dulce de leche con el toque ácido de frambuesas.
+            </p>
+            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
+              Dualidad comestible. <br/>
+              Acompañamiento para compartir. <br/>
+              Unión perfecta de sabores.
+            </p>
+            <a 
+              href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Amor%20de%20Dos." 
+              target="_blank"
+              rel="noreferrer"
+              className="mt-auto w-full bg-[#d4af37] text-white px-6 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
+            >
+              Consultar Disponibilidad
+            </a>
+          </div>
+
+          {/* TARJETA PRODUCTO: HAPPY CORAZONCITO */}
+          <div className="bg-white/95 backdrop-blur-sm p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
+            <div className="w-full aspect-square overflow-hidden rounded-lg mb-8 relative">
+              <img 
+                src="/hapy-corazoncito-crocante.jpeg" 
+                alt="Pastel Happy Corazoncito" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h2 className="text-xs tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-3">
+              Frutas y Dualidades
+            </h2>
+            <h3 className="text-4xl font-serif text-[#a67c00] mb-3">
+              Happy Corazoncito
+            </h3>
+            <p className="text-[#d4af37] italic text-lg mb-6">
+              Un deleite colmado de alegría
+            </p>
+            <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 px-4">
+              Bizcocho de vainilla que late como ese día especial en que naciste. Su cobertura de crema de queso, dulces corazones y frambuesas frescas colmadas de compota, evocan puro gozo vital.
+            </p>
+            <p className="text-[#c5a028] text-xs italic leading-loose mb-10 border-t border-[#d4af37]/20 pt-6 px-4">
+              Latidos de pura alegría. <br/>
+              Celebración hecha pastel. <br/>
+              Gozo vital en cada rebanada.
+            </p>
+            <a 
+              href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Happy%20Corazoncito." 
               target="_blank"
               rel="noreferrer"
               className="mt-auto w-full bg-[#d4af37] text-white px-6 py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-xs tracking-[0.2em] uppercase font-bold"
