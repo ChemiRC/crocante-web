@@ -185,10 +185,55 @@ function App() {
         </div>
       </section>
 
-      {/* NUEVA SECCIÓN: ARTE EN PORCIONES */}
+      {/* SECCIÓN NUEVOS PRODUCTOS MAPADOS DINÁMICAMENTE */}
+      <section className="pb-16 px-4 md:px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
+          
+          {pasteles.map((pastel, index) => (
+            <div key={index} className="bg-white/95 backdrop-blur-sm p-4 sm:p-6 md:p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
+              <div className="w-full aspect-square overflow-hidden rounded-lg mb-3 sm:mb-4 md:mb-8 relative">
+                <img 
+                  src={pastel.imagen} 
+                  alt={`Pastel ${pastel.titulo}`} 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <h2 className="text-[9px] sm:text-[11px] md:text-sm tracking-[0.15em] md:tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-1.5 md:mb-3">
+                {pastel.categoria}
+              </h2>
+              <h3 className="text-lg sm:text-xl md:text-4xl font-serif text-[#a67c00] leading-tight mb-1.5 md:mb-3">
+                {pastel.titulo}
+              </h3>
+              <p className="text-[#d4af37] italic text-[11px] sm:text-xs md:text-lg mb-2 md:mb-6">
+                {pastel.slogan}
+              </p>
+              <p className="text-gray-600 font-light text-[10px] sm:text-[11px] md:text-base leading-snug md:leading-relaxed mb-3 md:mb-6 w-full">
+                {pastel.descripcion}
+              </p>
+              <p className="text-[#c5a028] text-[9px] sm:text-[10px] md:text-sm italic leading-normal md:leading-loose mb-4 md:mb-10 border-t border-[#d4af37]/20 pt-3 md:pt-6 w-full">
+                {pastel.frases[0]} <br/>
+                {pastel.frases[1]} <br/>
+                {pastel.frases[2]}
+              </p>
+              <a 
+                href={`https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20${encodeURIComponent(pastel.waName)}.`} 
+                target="_blank"
+                rel="noreferrer"
+                className="mt-auto w-full bg-[#d4af37] text-white px-2 py-2.5 md:px-6 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
+              >
+                Consultar <span className="hidden xl:inline">Disponibilidad</span>
+              </a>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* NUEVA SECCIÓN: ARTE EN PORCIONES (UBICADA ABAJO DEL CATÁLOGO DE PASTELES) */}
       <section className="pb-24 px-4 md:px-6 max-w-6xl mx-auto">
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-16 border border-[#d4af37]/30 shadow-lg text-center relative overflow-hidden">
           
+          {/* Detalles decorativos de fondo */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-50"></div>
           
           <h2 className="text-[11px] md:text-sm tracking-[0.3em] md:tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-3 md:mb-4">
@@ -234,50 +279,6 @@ function App() {
               </a>
             </div>
           </div>
-
-        </div>
-      </section>
-
-      {/* SECCIÓN NUEVOS PRODUCTOS MAPADOS DINÁMICAMENTE */}
-      <section className="pb-24 px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
-          
-          {pasteles.map((pastel, index) => (
-            <div key={index} className="bg-white/95 backdrop-blur-sm p-4 sm:p-6 md:p-10 rounded-xl border border-gray-200 shadow-xl shadow-black/5 flex flex-col items-center text-center group">
-              <div className="w-full aspect-square overflow-hidden rounded-lg mb-3 sm:mb-4 md:mb-8 relative">
-                <img 
-                  src={pastel.imagen} 
-                  alt={`Pastel ${pastel.titulo}`} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <h2 className="text-[9px] sm:text-[11px] md:text-sm tracking-[0.15em] md:tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-1.5 md:mb-3">
-                {pastel.categoria}
-              </h2>
-              <h3 className="text-lg sm:text-xl md:text-4xl font-serif text-[#a67c00] leading-tight mb-1.5 md:mb-3">
-                {pastel.titulo}
-              </h3>
-              <p className="text-[#d4af37] italic text-[11px] sm:text-xs md:text-lg mb-2 md:mb-6">
-                {pastel.slogan}
-              </p>
-              <p className="text-gray-600 font-light text-[10px] sm:text-[11px] md:text-base leading-snug md:leading-relaxed mb-3 md:mb-6 w-full">
-                {pastel.descripcion}
-              </p>
-              <p className="text-[#c5a028] text-[9px] sm:text-[10px] md:text-sm italic leading-normal md:leading-loose mb-4 md:mb-10 border-t border-[#d4af37]/20 pt-3 md:pt-6 w-full">
-                {pastel.frases[0]} <br/>
-                {pastel.frases[1]} <br/>
-                {pastel.frases[2]}
-              </p>
-              <a 
-                href={`https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20${encodeURIComponent(pastel.waName)}.`} 
-                target="_blank"
-                rel="noreferrer"
-                className="mt-auto w-full bg-[#d4af37] text-white px-2 py-2.5 md:px-6 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
-              >
-                Consultar <span className="hidden xl:inline">Disponibilidad</span>
-              </a>
-            </div>
-          ))}
 
         </div>
       </section>
