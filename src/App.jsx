@@ -59,7 +59,7 @@ const pasteles = [
   {
     imagen: "/hapy-corazoncito-crocante.jpeg",
     categoria: "Frutas y Dualidades",
-    titulo: "Happy Corazoncito", // <-- ¡CORREGIDO AQUÍ!
+    titulo: "Happy Corazoncito",
     slogan: "Deleite de alegría",
     descripcion: "Bizcocho de vainilla que late. Su cobertura de crema de queso y frambuesas evocan gozo vital.",
     frases: ["Latidos de alegría.", "Celebración pastel.", "Gozo en rebanada."],
@@ -120,10 +120,20 @@ function App() {
           </a>
         </div>
 
+        {/* BOTÓN CASHBACK */}
+        <a 
+          href="https://take.cards/1RODM" 
+          target="_blank" 
+          rel="noreferrer"
+          className="mt-8 z-10 bg-[#d4af37] text-white px-5 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-[#ff69b4] transform hover:scale-105 transition-all duration-500 text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.15em] uppercase font-bold shadow-md max-w-[90%] md:max-w-xl text-center"
+        >
+          Descarga tu tarjeta cashback y obtén los beneficios
+        </a>
+
         {/* INDICADOR DE SCROLL FUNCIONAL */}
         <div 
           onClick={() => document.getElementById('descubre').scrollIntoView({ behavior: 'smooth' })}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 animate-bounce z-10 cursor-pointer transition-opacity duration-300"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 animate-bounce z-10 cursor-pointer transition-opacity duration-300"
           title="Descubrir menú"
         >
           <p className="text-[10px] md:text-xs tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-1">Descubre</p>
@@ -164,7 +174,7 @@ function App() {
               href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Edici%C3%B3n%2010%20de%20Mayo%20(Amor%20en%20capas)." 
               target="_blank"
               rel="noreferrer"
-              className="mt-auto w-full md:w-auto inline-block bg-[#d4af37] text-white px-6 py-3.5 md:px-10 md:py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
+              className="mt-auto w-full md:w-auto inline-block bg-[#d4af37] text-white px-6 py-3.5 md:px-10 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
             >
               Consultar Disponibilidad
             </a>
@@ -172,6 +182,59 @@ function App() {
           <div className="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden rounded-lg shadow-md aspect-square">
              <img src="/pastel10demayo.jpeg" alt="Pastel Amor en Capas" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
           </div>
+        </div>
+      </section>
+
+      {/* NUEVA SECCIÓN: ARTE EN PORCIONES */}
+      <section className="pb-24 px-4 md:px-6 max-w-6xl mx-auto">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-16 border border-[#d4af37]/30 shadow-lg text-center relative overflow-hidden">
+          
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-50"></div>
+          
+          <h2 className="text-[11px] md:text-sm tracking-[0.3em] md:tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-3 md:mb-4">
+            Arte en Porciones
+          </h2>
+          <p className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#a67c00] italic mb-6 md:mb-8">
+            Nuestras obras maestras, en formato petite
+          </p>
+          <p className="text-gray-700 font-light text-sm sm:text-base md:text-lg leading-relaxed mb-10 md:mb-16 max-w-3xl mx-auto">
+            Todos nuestros pasteles están disponibles en una delicada versión individual. Perfectos para un antojo sutil, un detalle elegante o para probar toda nuestra galería de sabores.
+          </p>
+
+          {/* CAJA 4 ARTES */}
+          <div className="bg-white p-5 sm:p-8 md:p-10 rounded-xl border border-gray-100 shadow-md max-w-4xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10 items-center text-center md:text-left group">
+            <div className="w-full md:w-1/2 aspect-square overflow-hidden rounded-lg relative">
+              <img 
+                src="/4-artes-crocante.jpeg" 
+                alt="Caja 4 Artes" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 bg-gray-100" 
+              />
+            </div>
+            
+            <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-3 md:space-y-4">
+              <h3 className="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] text-[#c5a028] uppercase font-bold">
+                Caja Degustación
+              </h3>
+              <h4 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#a67c00]">
+                4 Artes
+              </h4>
+              <p className="text-[#d4af37] italic text-sm md:text-lg">
+                Tu galería personal de sabores
+              </p>
+              <p className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-relaxed">
+                Una caja cuidadosamente diseñada que incluye 4 de nuestros pasteles en versión "Arte en Porciones". Ideal para compartir, regalar o consentir tu paladar con múltiples experiencias en una sola presentación.
+              </p>
+              <a 
+                href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20de%20la%20Caja%204%20Artes." 
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 w-full md:w-auto bg-[#d4af37] text-white px-6 py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[10px] sm:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
+              >
+                Consultar Caja 4 Artes
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -209,7 +272,7 @@ function App() {
                 href={`https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20${encodeURIComponent(pastel.waName)}.`} 
                 target="_blank"
                 rel="noreferrer"
-                className="mt-auto w-full bg-[#d4af37] text-white px-2 py-2.5 md:px-6 md:py-4 rounded-none hover:bg-[#ff69b4] transition-all duration-500 text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
+                className="mt-auto w-full bg-[#d4af37] text-white px-2 py-2.5 md:px-6 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
               >
                 Consultar <span className="hidden xl:inline">Disponibilidad</span>
               </a>
