@@ -1,7 +1,6 @@
 import React from 'react';
 
-// ARREGLO DE DATOS: Aquí vive la información de tus pasteles.
-// Si quieres agregar uno nuevo, solo lo añades a esta lista.
+// ARREGLO DE DATOS
 const pasteles = [
   {
     imagen: "/avellanisimo-crocante.jpeg",
@@ -60,7 +59,7 @@ const pasteles = [
   {
     imagen: "/hapy-corazoncito-crocante.jpeg",
     categoria: "Frutas y Dualidades",
-    titulo: "Corazoncito",
+    titulo: "Happy Corazoncito", // <-- ¡CORREGIDO AQUÍ!
     slogan: "Deleite de alegría",
     descripcion: "Bizcocho de vainilla que late. Su cobertura de crema de queso y frambuesas evocan gozo vital.",
     frases: ["Latidos de alegría.", "Celebración pastel.", "Gozo en rebanada."],
