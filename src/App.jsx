@@ -1,6 +1,15 @@
 import React from 'react';
 
-// ARREGLO DE DATOS
+// === CONFIGURACIÓN Y DATOS ===
+const WHATSAPP_CONFIG = {
+  phone: "523325482404",
+  baseUrl: "https://wa.me/"
+};
+
+const getWhatsAppLink = (message) => {
+  return `${WHATSAPP_CONFIG.baseUrl}${WHATSAPP_CONFIG.phone}?text=${encodeURIComponent(message)}`;
+};
+
 const pasteles = [
   {
     imagen: "/avellanisimo-crocante.jpeg",
@@ -85,6 +94,7 @@ const pasteles = [
   }
 ];
 
+// === COMPONENTE PRINCIPAL ===
 function App() {
   return (
     <div 
@@ -98,37 +108,58 @@ function App() {
           src="/logo-crocante-dorado.PNG" 
           alt="Crocante Logo Dorado" 
           className="w-80 md:w-[45rem] z-10 drop-shadow-xl object-contain"
+          loading="eager"
         />
 
         <p className="mt-2 text-[#d4af37] tracking-[0.5em] uppercase text-base md:text-xl z-10 font-bold bg-white/70 px-8 py-3 rounded-full backdrop-blur-md shadow-sm">
           Repostería con intención
         </p>
 
-        <div className="flex items-center gap-10 mt-5 z-10">
-          <a href="https://drive.google.com/file/d/1tJjf7eTc-TE7ZiTH3TmuxR7pTQe76Zu2/view" target="_blank" rel="noreferrer" className="transform hover:scale-110 transition-all duration-300" aria-label="Ver Menú Crocante" title="Ver Menú">
-            <img src="/globo-batidor-dorado.PNG" alt="Icono Globo Batidor Dorado" className="w-14 h-14 object-contain" style={{ transform: 'rotate(-5deg)' }} />
+        {/* MENÚ DE ENLACES HORIZONTAL */}
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 z-10 max-w-[95%]">
+          
+          {/* 1. Botón Menú (Globo Batidor) */}
+          <a href="https://drive.google.com/file/d/1tJjf7eTc-TE7ZiTH3TmuxR7pTQe76Zu2/view" target="_blank" rel="noreferrer" className="transform hover:scale-110 transition-all duration-300 flex items-center justify-center" aria-label="Ver Menú Crocante" title="Ver Menú">
+            <img src="/globo-batidor-dorado.PNG" alt="Icono Globo Batidor Dorado" className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm" style={{ transform: 'rotate(-5deg)' }} />
           </a>
 
-          <div className="h-10 w-[1px] bg-[#d4af37]/50"></div>
+          <div className="h-6 w-[1px] bg-[#d4af37]/50"></div>
 
-          <a href="https://www.instagram.com/crocante_reposteria?igsh=dm9ib3d0ZmkzdnZn" target="_blank" rel="noreferrer" className="text-[#d4af37] transform hover:scale-110 hover:text-[#ff69b4] transition-all duration-300" aria-label="Visitar Instagram de Crocante" title="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          {/* 2. Botón Instagram */}
+          <a href="https://www.instagram.com/crocante_reposteria?igsh=dm9ib3d0ZmkzdnZn" target="_blank" rel="noreferrer" className="text-[#d4af37] transform hover:scale-110 hover:text-[#ff69b4] transition-all duration-300 flex items-center justify-center" aria-label="Visitar Instagram de Crocante" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="md:w-[32px] md:h-[32px]">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-        </div>
 
-        {/* BOTÓN CASHBACK */}
-        <a 
-          href="https://take.cards/1RODM" 
-          target="_blank" 
-          rel="noreferrer"
-          className="mt-8 z-10 bg-[#d4af37] text-white px-5 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-[#ff69b4] transform hover:scale-105 transition-all duration-500 text-[10px] md:text-[11px] tracking-[0.1em] md:tracking-[0.15em] uppercase font-bold shadow-md max-w-[90%] md:max-w-xl text-center"
-        >
-          Descarga tu tarjeta cashback y obtén los beneficios
-        </a>
+          {/* Separador */}
+          <div className="h-6 w-[1px] bg-[#d4af37]/50 hidden sm:block"></div>
+
+          {/* 3. Botón Cashback */}
+          <a 
+            href="https://take.cards/1RODM" 
+            target="_blank" 
+            rel="noreferrer"
+            className="text-[#d4af37] hover:text-[#ff69b4] text-[11px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300"
+          >
+            Cashback
+          </a>
+
+          <div className="h-6 w-[1px] bg-[#d4af37]/50"></div>
+
+{/* 4. Botón Bolsa de Trabajo */}
+          <a 
+            href={getWhatsAppLink("Hola, me gustaría consultar las vacantes disponibles para trabajar en el equipo de Crocante.")} 
+            target="_blank" 
+            rel="noreferrer"
+            className="text-[#d4af37] hover:text-[#ff69b4] text-[11px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300"
+          >
+            Trabaja con nosotros
+          </a>
+          
+        </div>
 
         {/* INDICADOR DE SCROLL FUNCIONAL */}
         <div 
@@ -171,7 +202,7 @@ function App() {
               El regalo más noble para su alma.
             </p>
             <a 
-              href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20Edici%C3%B3n%2010%20de%20Mayo%20(Amor%20en%20capas)." 
+              href={getWhatsAppLink("Hola, me gustaría consultar la disponibilidad del pastel Edición 10 de Mayo (Amor en capas).")}
               target="_blank"
               rel="noreferrer"
               className="mt-auto w-full md:w-auto inline-block bg-[#d4af37] text-white px-6 py-3.5 md:px-10 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-bold"
@@ -180,12 +211,12 @@ function App() {
             </a>
           </div>
           <div className="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden rounded-lg shadow-md aspect-square">
-             <img src="/pastel10demayo.jpeg" alt="Pastel Amor en Capas" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+             <img src="/pastel10demayo.jpeg" alt="Pastel Amor en Capas" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN NUEVOS PRODUCTOS MAPADOS DINÁMICAMENTE */}
+      {/* SECCIÓN CATÁLOGO */}
       <section className="pb-16 px-4 md:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
           
@@ -196,6 +227,7 @@ function App() {
                   src={pastel.imagen} 
                   alt={`Pastel ${pastel.titulo}`} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
               <h2 className="text-[9px] sm:text-[11px] md:text-sm tracking-[0.15em] md:tracking-[0.3em] text-[#c5a028] uppercase font-bold mb-1.5 md:mb-3">
@@ -211,12 +243,10 @@ function App() {
                 {pastel.descripcion}
               </p>
               <p className="text-[#c5a028] text-[9px] sm:text-[10px] md:text-sm italic leading-normal md:leading-loose mb-4 md:mb-10 border-t border-[#d4af37]/20 pt-3 md:pt-6 w-full">
-                {pastel.frases[0]} <br/>
-                {pastel.frases[1]} <br/>
-                {pastel.frases[2]}
+                {pastel.frases.map((f, i) => <React.Fragment key={i}>{f}<br/></React.Fragment>)}
               </p>
               <a 
-                href={`https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20del%20pastel%20${encodeURIComponent(pastel.waName)}.`} 
+                href={getWhatsAppLink(`Hola, me gustaría consultar la disponibilidad del pastel ${pastel.waName}.`)} 
                 target="_blank"
                 rel="noreferrer"
                 className="mt-auto w-full bg-[#d4af37] text-white px-2 py-2.5 md:px-6 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
@@ -229,13 +259,10 @@ function App() {
         </div>
       </section>
 
-      {/* NUEVA SECCIÓN: ARTE EN PORCIONES (UBICADA ABAJO DEL CATÁLOGO DE PASTELES) */}
+      {/* SECCIÓN: ARTE EN PORCIONES */}
       <section className="pb-24 px-4 md:px-6 max-w-6xl mx-auto">
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-16 border border-[#d4af37]/30 shadow-lg text-center relative overflow-hidden">
-          
-          {/* Detalles decorativos de fondo */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-50"></div>
-          
           <h2 className="text-[11px] md:text-sm tracking-[0.3em] md:tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-3 md:mb-4">
             Arte en Porciones
           </h2>
@@ -246,13 +273,13 @@ function App() {
             Todos nuestros pasteles están disponibles en una delicada versión individual. Perfectos para un antojo sutil, un detalle elegante o para probar toda nuestra galería de sabores.
           </p>
 
-          {/* CAJA 4 ARTES */}
           <div className="bg-white p-5 sm:p-8 md:p-10 rounded-xl border border-gray-100 shadow-md max-w-4xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10 items-center text-center md:text-left group">
             <div className="w-full md:w-1/2 aspect-square overflow-hidden rounded-lg relative">
               <img 
                 src="/4-artes-crocante.jpeg" 
                 alt="Caja 4 Artes" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 bg-gray-100" 
+                loading="lazy"
               />
             </div>
             
@@ -270,7 +297,7 @@ function App() {
                 Una caja cuidadosamente diseñada que incluye 4 de nuestros pasteles en versión "Arte en Porciones". Ideal para compartir, regalar o consentir tu paladar con múltiples experiencias en una sola presentación.
               </p>
               <a 
-                href="https://wa.me/523325482404?text=Hola,%20me%20gustar%C3%ADa%20consultar%20la%20disponibilidad%20de%20la%20Caja%204%20Artes." 
+                href={getWhatsAppLink("Hola, me gustaría consultar la disponibilidad de la Caja 4 Artes.")} 
                 target="_blank"
                 rel="noreferrer"
                 className="mt-4 w-full md:w-auto bg-[#d4af37] text-white px-6 py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-[#ff69b4] transition-all duration-500 text-[10px] sm:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase font-bold"
@@ -279,10 +306,8 @@ function App() {
               </a>
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }
