@@ -115,50 +115,58 @@ function App() {
           Repostería con intención
         </p>
 
-        {/* MENÚ DE ENLACES HORIZONTAL */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 z-10 max-w-[95%]">
+        {/* MENÚ DE ENLACES (ADAPTATIVO PARA IPHONE Y ESCRITORIO) */}
+        <div className="flex flex-col md:flex-row items-center justify-center z-10 w-full mt-8 gap-4 md:gap-6">
           
-          {/* 1. Botón Menú (Globo Batidor) */}
-          <a href="https://drive.google.com/file/d/1tJjf7eTc-TE7ZiTH3TmuxR7pTQe76Zu2/view" target="_blank" rel="noreferrer" className="transform hover:scale-110 transition-all duration-300 flex items-center justify-center" aria-label="Ver Menú Crocante" title="Ver Menú">
-            <img src="/globo-batidor-dorado.PNG" alt="Icono Globo Batidor Dorado" className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm" style={{ transform: 'rotate(-5deg)' }} />
-          </a>
+          {/* GRUPO 1: Iconos (Fila 1 en móvil) */}
+          <div className="flex items-center justify-center gap-6">
+            {/* Botón Menú */}
+            <a href="https://drive.google.com/file/d/1tJjf7eTc-TE7ZiTH3TmuxR7pTQe76Zu2/view" target="_blank" rel="noreferrer" className="transform hover:scale-110 transition-all duration-300 flex items-center justify-center" aria-label="Ver Menú Crocante" title="Ver Menú">
+              <img src="/globo-batidor-dorado.PNG" alt="Icono Globo Batidor Dorado" className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm" style={{ transform: 'rotate(-5deg)' }} />
+            </a>
 
-          <div className="h-6 w-[1px] bg-[#d4af37]/50"></div>
+            {/* Separador entre iconos */}
+            <div className="h-6 w-[1px] bg-[#d4af37]/50"></div>
 
-          {/* 2. Botón Instagram */}
-          <a href="https://www.instagram.com/crocante_reposteria?igsh=dm9ib3d0ZmkzdnZn" target="_blank" rel="noreferrer" className="text-[#d4af37] transform hover:scale-110 hover:text-[#ff69b4] transition-all duration-300 flex items-center justify-center" aria-label="Visitar Instagram de Crocante" title="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="md:w-[32px] md:h-[32px]">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
+            {/* Botón Instagram */}
+            <a href="https://www.instagram.com/crocante_reposteria?igsh=dm9ib3d0ZmkzdnZn" target="_blank" rel="noreferrer" className="text-[#d4af37] transform hover:scale-110 hover:text-[#ff69b4] transition-all duration-300 flex items-center justify-center" aria-label="Visitar Instagram de Crocante" title="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="md:w-[32px] md:h-[32px]">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
 
-          {/* Separador */}
-          <div className="h-6 w-[1px] bg-[#d4af37]/50 hidden sm:block"></div>
+          {/* SEPARADOR CENTRAL (Solo visible en computadoras/tablets) */}
+          <div className="hidden md:block h-6 w-[1px] bg-[#d4af37]/50"></div>
 
-          {/* 3. Botón Cashback */}
-          <a 
-            href="https://take.cards/1RODM" 
-            target="_blank" 
-            rel="noreferrer"
-            className="text-[#d4af37] hover:text-[#ff69b4] text-[11px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300"
-          >
-            Cashback
-          </a>
+          {/* GRUPO 2: Textos (Fila 2 en móvil) */}
+          <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0">
+            {/* Botón Cashback */}
+            <a 
+              href="https://take.cards/1RODM" 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-[#d4af37] hover:text-[#ff69b4] text-[10px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300 whitespace-nowrap"
+            >
+              Cashback
+            </a>
 
-          <div className="h-6 w-[1px] bg-[#d4af37]/50"></div>
+            {/* Separador entre textos */}
+            <div className="h-4 md:h-6 w-[1px] bg-[#d4af37]/50"></div>
 
-{/* 4. Botón Bolsa de Trabajo */}
-          <a 
-            href={getWhatsAppLink("Hola, me gustaría consultar las vacantes disponibles para trabajar en el equipo de Crocante.")} 
-            target="_blank" 
-            rel="noreferrer"
-            className="text-[#d4af37] hover:text-[#ff69b4] text-[11px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300"
-          >
-            Trabaja con nosotros
-          </a>
-          
+            {/* Botón Bolsa de Trabajo */}
+            <a 
+              href={getWhatsAppLink("Hola, me gustaría consultar las vacantes disponibles para trabajar en el equipo de Crocante.")} 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-[#d4af37] hover:text-[#ff69b4] text-[10px] md:text-sm tracking-[0.2em] uppercase font-bold transform hover:scale-105 transition-all duration-300 whitespace-nowrap"
+            >
+              Trabaja con nosotros
+            </a>
+          </div>
+
         </div>
 
         {/* INDICADOR DE SCROLL FUNCIONAL */}
