@@ -174,20 +174,16 @@ function App() {
     <div className="relative min-h-screen overflow-x-hidden text-ink selection:bg-gold-400 selection:text-white">
 
       {/* ╔══════════ HERO ══════════╗ */}
-      <header className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-12 pb-28">
+      <header className="relative min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10 pb-24">
         {/* Halo dorado de fondo — muy sutil */}
         <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] md:w-[1100px] md:h-[1100px] rounded-full"
                style={{ background: 'radial-gradient(circle, rgba(244, 228, 188, 0.18) 0%, rgba(212, 175, 55, 0.04) 40%, transparent 70%)' }} />
         </div>
 
-        {/* Sprigs de romero flotantes */}
-        <RosemarySprig className="absolute -left-2 top-8 md:left-10 md:top-16 w-20 md:w-32 text-sage opacity-30 animate-float pointer-events-none" />
-        <RosemarySprig className="absolute -right-2 top-8 md:right-10 md:top-16 w-20 md:w-32 text-sage opacity-30 animate-float pointer-events-none" flip />
-
-        <p className="reveal text-[11px] md:text-sm tracking-[0.45em] sm:tracking-[0.55em] uppercase text-gold-600/85 font-semibold mb-6">
-          ⸻ Repostería Artesanal · Zapopan ⸻
-        </p>
+        {/* Sprigs de romero flotantes — solo en desktop para evitar overflow en móvil */}
+        <RosemarySprig className="hidden md:block absolute md:left-10 md:top-16 md:w-32 text-sage opacity-30 animate-float pointer-events-none" />
+        <RosemarySprig className="hidden md:block absolute md:right-10 md:top-16 md:w-32 text-sage opacity-30 animate-float pointer-events-none" flip />
 
         <img
           src="/logo-crocante-dorado.PNG"
@@ -197,9 +193,7 @@ function App() {
           loading="eager"
         />
 
-        <Ornament className="reveal mt-2 md:mt-1" />
-
-        <p className="reveal mt-4 font-serif italic text-2xl md:text-4xl text-gold-700 tracking-wide">
+        <p className="reveal mt-4 md:mt-2 font-serif italic text-2xl md:text-4xl text-gold-700 tracking-wide">
           Repostería con intención
         </p>
 
