@@ -140,8 +140,21 @@ const Ornament = ({ className = '' }) => (
 
 // === COMPONENTE PRINCIPAL ===
 function App() {
-  // Reveal-on-scroll con IntersectionObserver
+  // Reveal-on-scroll con IntersectionObserver + fallback de seguridad
   useEffect(() => {
+    const targets = document.querySelectorAll('.reveal, .reveal-stagger');
+
+    // Fallback: si el observer no dispara (Safari móvil con quirks, JS bloqueado, etc.)
+    // forzamos visibilidad después de 1.8s para que el contenido NUNCA quede oculto.
+    const safety = setTimeout(() => {
+      targets.forEach((el) => el.classList.add('is-visible'));
+    }, 1800);
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return () => clearTimeout(safety);
+    }
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -151,17 +164,17 @@ function App() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0, rootMargin: '0px 0px -40px 0px' }
     );
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    targets.forEach((el) => obs.observe(el));
+    return () => { clearTimeout(safety); obs.disconnect(); };
   }, []);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden text-ink selection:bg-gold-400 selection:text-white">
 
       {/* ╔══════════ HERO ══════════╗ */}
-      <header className="relative min-h-[100svh] flex flex-col items-center justify-center text-center px-4 pt-12 pb-28">
+      <header className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-12 pb-28">
         {/* Halo dorado de fondo — muy sutil */}
         <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] md:w-[1100px] md:h-[1100px] rounded-full"
@@ -204,9 +217,9 @@ function App() {
                 <img
                   src="/globo-batidor-dorado.PNG"
                   alt=""
-                  className="w-6 h-6 object-contain transition-transform duration-500 group-hover:rotate-12"
+                  className="w-4 h-4 md:w-6 md:h-6 object-contain transition-transform duration-500 group-hover:rotate-12"
                 />
-                <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase font-semibold text-gold-700">Menú</span>
+                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Menú</span>
               </a>
             </li>
             <li>
@@ -217,13 +230,13 @@ function App() {
                 aria-label="Visitar Instagram de Crocante"
                 title="Instagram"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"
-                     className="text-gold-700 transition-transform duration-500 group-hover:scale-110">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"
+                     className="w-4 h-4 md:w-5 md:h-5 text-gold-700 transition-transform duration-500 group-hover:scale-110">
                   <rect x="2" y="2" width="20" height="20" rx="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeLinecap="round" />
                 </svg>
-                <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase font-semibold text-gold-700">Instagram</span>
+                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Instagram</span>
               </a>
             </li>
             <li>
@@ -232,7 +245,7 @@ function App() {
                 target="_blank" rel="noreferrer"
                 className="btn-pill"
               >
-                <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase font-semibold text-gold-700">Cashback</span>
+                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Cashback</span>
               </a>
             </li>
             <li>
@@ -241,7 +254,7 @@ function App() {
                 target="_blank" rel="noreferrer"
                 className="btn-pill"
               >
-                <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase font-semibold text-gold-700">Trabaja con nosotros</span>
+                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Trabaja con nosotros</span>
               </a>
             </li>
           </ul>
@@ -303,7 +316,7 @@ function App() {
             <a
               href={getWhatsAppLink("Hola, me gustaría consultar la disponibilidad del pastel Edición 10 de Mayo (Amor en capas).")}
               target="_blank" rel="noreferrer"
-              className="btn-gold mt-6 min-h-12 px-8 py-4 text-[11px] md:text-xs"
+              className="btn-gold mt-6 min-h-[42px] md:min-h-12 px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs"
             >
               Consultar Disponibilidad
             </a>
@@ -333,7 +346,7 @@ function App() {
 
       {/* ╔══════════ CATÁLOGO ══════════╗ */}
       <section className="px-4 md:px-6 max-w-7xl mx-auto pb-24">
-        <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {pasteles.map((pastel, index) => (
             <article
               key={index}
@@ -387,7 +400,7 @@ function App() {
                 <a
                   href={getWhatsAppLink(`Hola, me gustaría consultar la disponibilidad del pastel ${pastel.waName}.`)}
                   target="_blank" rel="noreferrer"
-                  className="btn-gold mt-auto min-h-12 px-6 py-3.5 text-[10px] md:text-xs"
+                  className="btn-gold mt-auto min-h-[40px] md:min-h-12 px-4 md:px-6 py-2.5 md:py-3.5 text-[9px] md:text-xs tracking-[0.16em] md:tracking-[0.18em]"
                 >
                   Consultar Disponibilidad
                 </a>
@@ -438,7 +451,7 @@ function App() {
               <a
                 href={getWhatsAppLink("Hola, me gustaría consultar la disponibilidad de la Caja 4 Artes.")}
                 target="_blank" rel="noreferrer"
-                className="btn-gold mt-2 min-h-12 px-7 py-3.5 text-[10px] md:text-xs"
+                className="btn-gold mt-2 min-h-[42px] md:min-h-12 px-6 md:px-7 py-3 md:py-3.5 text-[10px] md:text-xs"
               >
                 Consultar Caja 4 Artes
               </a>
