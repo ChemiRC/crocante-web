@@ -162,10 +162,10 @@ function App() {
 
       {/* ╔══════════ HERO ══════════╗ */}
       <header className="relative min-h-[100svh] flex flex-col items-center justify-center text-center px-4 pt-12 pb-28">
-        {/* Halo dorado de fondo */}
+        {/* Halo dorado de fondo — muy sutil */}
         <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] md:w-[1100px] md:h-[1100px] rounded-full opacity-90"
-               style={{ background: 'radial-gradient(circle, rgba(244, 228, 188, 0.55) 0%, rgba(212, 175, 55, 0.10) 35%, transparent 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] md:w-[1100px] md:h-[1100px] rounded-full"
+               style={{ background: 'radial-gradient(circle, rgba(244, 228, 188, 0.18) 0%, rgba(212, 175, 55, 0.04) 40%, transparent 70%)' }} />
         </div>
 
         {/* Sprigs de romero flotantes */}
@@ -247,19 +247,17 @@ function App() {
           </ul>
         </nav>
 
-        {/* Indicador de scroll */}
-        <button
+        {/* Indicador de scroll funcional — chevron clásico */}
+        <div
           onClick={() => document.getElementById('descubre')?.scrollIntoView({ behavior: 'smooth' })}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gold-700 opacity-80 hover:opacity-100 transition-all duration-500"
-          aria-label="Descubrir menú"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 animate-bounce z-10 cursor-pointer transition-opacity duration-300"
           title="Descubrir menú"
         >
-          <span className="text-[10px] tracking-[0.5em] uppercase font-semibold">Descubre</span>
-          <svg width="14" height="22" viewBox="0 0 14 22" className="animate-float" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-            <rect x="1" y="1" width="12" height="20" rx="6" />
-            <path d="M7 6 L 7 10" />
+          <p className="text-[10px] md:text-xs tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-1">Descubre</p>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c5a028" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-        </button>
+        </div>
       </header>
 
       {/* ╔══════════ FRASE DEL ALMA ══════════╗ */}
