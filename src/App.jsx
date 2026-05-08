@@ -185,7 +185,7 @@ function App() {
         <RosemarySprig className="absolute -left-2 top-8 md:left-10 md:top-16 w-20 md:w-32 text-sage opacity-30 animate-float pointer-events-none" />
         <RosemarySprig className="absolute -right-2 top-8 md:right-10 md:top-16 w-20 md:w-32 text-sage opacity-30 animate-float pointer-events-none" flip />
 
-        <p className="reveal text-[10px] md:text-xs tracking-[0.55em] uppercase text-gold-600/85 font-semibold mb-6">
+        <p className="reveal text-[11px] md:text-sm tracking-[0.45em] sm:tracking-[0.55em] uppercase text-gold-600/85 font-semibold mb-6">
           ⸻ Repostería Artesanal · Zapopan ⸻
         </p>
 
@@ -219,7 +219,7 @@ function App() {
                   alt=""
                   className="w-4 h-4 md:w-6 md:h-6 object-contain transition-transform duration-500 group-hover:rotate-12"
                 />
-                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Menú</span>
+                <span className="text-[11px] md:text-sm tracking-[0.2em] md:tracking-[0.26em] uppercase font-semibold text-gold-700">Menú</span>
               </a>
             </li>
             <li>
@@ -236,7 +236,7 @@ function App() {
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeLinecap="round" />
                 </svg>
-                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Instagram</span>
+                <span className="text-[11px] md:text-sm tracking-[0.2em] md:tracking-[0.26em] uppercase font-semibold text-gold-700">Instagram</span>
               </a>
             </li>
             <li>
@@ -245,7 +245,7 @@ function App() {
                 target="_blank" rel="noreferrer"
                 className="btn-pill"
               >
-                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Cashback</span>
+                <span className="text-[11px] md:text-sm tracking-[0.2em] md:tracking-[0.26em] uppercase font-semibold text-gold-700">Cashback</span>
               </a>
             </li>
             <li>
@@ -254,7 +254,7 @@ function App() {
                 target="_blank" rel="noreferrer"
                 className="btn-pill"
               >
-                <span className="text-[10px] md:text-xs tracking-[0.22em] md:tracking-[0.28em] uppercase font-semibold text-gold-700">Trabaja con nosotros</span>
+                <span className="text-[11px] md:text-sm tracking-[0.18em] md:tracking-[0.26em] uppercase font-semibold text-gold-700">Trabaja con nosotros</span>
               </a>
             </li>
           </ul>
@@ -266,7 +266,7 @@ function App() {
           className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 animate-bounce z-10 cursor-pointer transition-opacity duration-300"
           title="Descubrir menú"
         >
-          <p className="text-[10px] md:text-xs tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-1">Descubre</p>
+          <p className="text-[11px] md:text-sm tracking-[0.4em] text-[#c5a028] uppercase font-bold mb-1">Descubre</p>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c5a028" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
@@ -279,7 +279,7 @@ function App() {
         <p className="font-serif text-2xl md:text-4xl italic text-gold-700 leading-relaxed tracking-wide">
           “Una experiencia visual y sensorial desde el alma,<br className="hidden md:block" /> donde la repostería se encuentra con la belleza del ser.”
         </p>
-        <p className="mt-8 text-[10px] md:text-xs tracking-[0.45em] uppercase text-gold-600/80 font-semibold">
+        <p className="mt-8 text-[11px] md:text-sm tracking-[0.45em] uppercase text-gold-600/80 font-semibold">
           ⸻ Crocante ⸻
         </p>
       </section>
@@ -288,7 +288,7 @@ function App() {
       <section className="px-4 md:px-6 max-w-6xl mx-auto pb-24">
         <article className="reveal panel-marble ornate-corners rounded-2xl p-6 sm:p-10 md:p-14 shadow-gold-soft flex flex-col-reverse md:flex-row-reverse gap-8 md:gap-14 items-center group">
           <div className="flex-1 space-y-5 text-center md:text-left">
-            <p className="text-[10px] sm:text-xs tracking-[0.42em] text-gold-600 uppercase font-semibold">
+            <p className="text-[11px] sm:text-sm tracking-[0.32em] sm:tracking-[0.42em] text-gold-600 uppercase font-semibold">
               ⸻ Edición Especial 10 de Mayo ⸻
             </p>
             <div>
@@ -308,7 +308,7 @@ function App() {
               <RosemarySprig className="w-3 h-8 text-sage opacity-70" />
               <span className="block h-px w-12 bg-gold-300/70" />
             </div>
-            <p className="text-gold-700/85 font-serif text-xs md:text-sm italic leading-loose max-w-md mx-auto md:mx-0">
+            <p className="text-gold-700/90 font-serif text-[13px] md:text-base italic leading-loose max-w-md mx-auto md:mx-0">
               Pureza infinita que vuelve a su origen.<br />
               Un abrazo de dulzura para mamá.<br />
               El regalo más noble para su alma.
@@ -335,7 +335,7 @@ function App() {
 
       {/* ╔══════════ ENCABEZADO CATÁLOGO ══════════╗ */}
       <section className="reveal text-center px-4 max-w-3xl mx-auto pb-12">
-        <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-gold-600 font-semibold mb-4">
+        <p className="text-[11px] md:text-sm tracking-[0.5em] uppercase text-gold-600 font-semibold mb-4">
           La Galería
         </p>
         <h2 className="font-serif text-4xl md:text-6xl text-gold-700 leading-tight">
@@ -345,8 +345,8 @@ function App() {
       </section>
 
       {/* ╔══════════ CATÁLOGO ══════════╗ */}
-      <section className="px-4 md:px-6 max-w-7xl mx-auto pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <section className="px-3 sm:px-4 md:px-6 max-w-7xl mx-auto pb-24">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-7">
           {pasteles.map((pastel, index) => (
             <article
               key={index}
@@ -367,32 +367,32 @@ function App() {
                 <div className="absolute inset-3 border border-white/20 rounded-xl pointer-events-none" />
 
                 {/* Categoría */}
-                <span className="absolute top-4 left-4 px-3 py-1.5 text-[9px] md:text-[10px] tracking-[0.28em] uppercase font-semibold text-gold-100 bg-ink/40 backdrop-blur-sm rounded-full border border-gold-300/30">
+                <span className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[11px] md:text-xs tracking-[0.18em] sm:tracking-[0.24em] md:tracking-[0.28em] uppercase font-semibold text-gold-100 bg-ink/45 backdrop-blur-sm rounded-full border border-gold-300/30">
                   {pastel.categoria}
                 </span>
 
                 {/* Título y eslogan */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
-                  <h3 className="font-serif text-3xl md:text-4xl leading-none drop-shadow-md">
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 md:p-6 text-white">
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-none drop-shadow-md">
                     {pastel.titulo}
                   </h3>
-                  <p className="mt-2 font-serif italic text-sm md:text-base text-gold-100/90">
+                  <p className="mt-1.5 sm:mt-2 font-serif italic text-[13px] sm:text-sm md:text-base text-gold-100/95">
                     {pastel.slogan}
                   </p>
                 </div>
               </div>
 
               {/* Contenido descriptivo */}
-              <div className="p-5 md:p-6 flex flex-col flex-1 text-center">
-                <p className="text-stone-600 text-sm md:text-[15px] leading-relaxed mb-4">
+              <div className="p-3.5 sm:p-5 md:p-6 flex flex-col flex-1 text-center">
+                <p className="text-stone-700 text-[13px] sm:text-sm md:text-[15px] leading-relaxed mb-3 sm:mb-4">
                   {pastel.descripcion}
                 </p>
-                <div className="flex items-center gap-2 my-3 justify-center" aria-hidden="true">
-                  <span className="block h-px w-10 bg-gold-300/60" />
+                <div className="flex items-center gap-2 my-2 sm:my-3 justify-center" aria-hidden="true">
+                  <span className="block h-px w-8 sm:w-10 bg-gold-300/60" />
                   <span className="block w-1 h-1 rounded-full bg-gold-500" />
-                  <span className="block h-px w-10 bg-gold-300/60" />
+                  <span className="block h-px w-8 sm:w-10 bg-gold-300/60" />
                 </div>
-                <p className="text-gold-700/90 text-xs md:text-sm italic font-serif leading-loose mb-5">
+                <p className="text-gold-700 text-[12px] sm:text-[13px] md:text-sm italic font-serif leading-relaxed sm:leading-loose mb-4 sm:mb-5">
                   {pastel.frases.map((f, i) => (
                     <React.Fragment key={i}>{f}<br /></React.Fragment>
                   ))}
@@ -400,9 +400,9 @@ function App() {
                 <a
                   href={getWhatsAppLink(`Hola, me gustaría consultar la disponibilidad del pastel ${pastel.waName}.`)}
                   target="_blank" rel="noreferrer"
-                  className="btn-gold mt-auto min-h-[40px] md:min-h-12 px-4 md:px-6 py-2.5 md:py-3.5 text-[9px] md:text-xs tracking-[0.16em] md:tracking-[0.18em]"
+                  className="btn-gold mt-auto min-h-[42px] md:min-h-12 px-3 sm:px-5 md:px-6 py-2.5 md:py-3.5 text-[11px] md:text-xs tracking-[0.14em] sm:tracking-[0.16em] md:tracking-[0.18em]"
                 >
-                  Consultar Disponibilidad
+                  Consultar<span className="hidden lg:inline"> Disponibilidad</span>
                 </a>
               </div>
             </article>
@@ -418,7 +418,7 @@ function App() {
           <RosemarySprig className="hidden sm:block absolute left-2 top-8 w-12 md:w-16 text-sage opacity-30 animate-sway" />
           <RosemarySprig className="hidden sm:block absolute right-2 top-8 w-12 md:w-16 text-sage opacity-30 animate-sway" flip />
 
-          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-gold-600 font-semibold mb-4">
+          <p className="text-[11px] md:text-sm tracking-[0.4em] sm:tracking-[0.5em] uppercase text-gold-600 font-semibold mb-4">
             Arte en Porciones
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl italic text-gold-700 mb-6 leading-tight">
@@ -438,7 +438,7 @@ function App() {
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-3">
-              <p className="text-[10px] md:text-xs tracking-[0.32em] uppercase text-gold-600 font-semibold">
+              <p className="text-[11px] md:text-sm tracking-[0.28em] md:tracking-[0.32em] uppercase text-gold-600 font-semibold">
                 Caja Degustación
               </p>
               <h3 className="font-serif text-4xl sm:text-5xl text-gold-700">4 Artes</h3>
@@ -466,7 +466,7 @@ function App() {
         <p className="font-serif italic text-gold-700 text-lg md:text-xl">
           Crocante · Repostería con intención
         </p>
-        <p className="text-[10px] tracking-[0.4em] uppercase text-gold-600/70 mt-3 font-semibold">
+        <p className="text-[11px] md:text-sm tracking-[0.4em] uppercase text-gold-600/70 mt-3 font-semibold">
           Zapopan · Hecho con amor
         </p>
       </footer>
